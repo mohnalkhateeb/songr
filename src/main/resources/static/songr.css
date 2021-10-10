@@ -1,0 +1,18 @@
+body
+{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTvjue8iis72I7M09umf541d3BUdz5tqMOBQ&usqp=CAU");
+    width: 100%;
+
+}
+h1{
+    display: inline-block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 35%;
+    color: red;
+}
