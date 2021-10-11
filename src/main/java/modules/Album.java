@@ -1,6 +1,16 @@
 package modules;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
 public class Album {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    public long id;
+
     String title;
     String artist;
     int songCount;
@@ -13,6 +23,10 @@ public class Album {
         this.songCount = songCount;
         this.length = length;
         this.imageUrl = imageUrl;
+    }
+
+    public Album() {
+
     }
 
     public String getTitle() {

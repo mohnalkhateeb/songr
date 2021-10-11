@@ -13,5 +13,14 @@
     <div th:text="${album.length}"></div>
     <img th:src="${album.imageUrl}">
 </section>
+
+<form action="/albums" method="post">
+    <input type="text" name="title" placeholder="Album Title"/>
+    <input type="text" name="artist" placeholder="Album Artist"/>
+    <input type="number" name="songCount" placeholder="Number of Songs"/>
+    <input type="number" name="length" placeholder="Length of Album in Seconds"/>
+    <input type="text" name="imageUrl" placeholder="Album Art"/>
+    <input type = "submit"> Make that Album </input>
+</form>
 </body>
 </html>
