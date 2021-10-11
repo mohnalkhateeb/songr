@@ -1,21 +1,31 @@
 package com.example.songr.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import modules.Album;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+import java.util.ArrayList;
+import java.util.List;
+
+@Controller
 public class HelloWorldController {
-    @GetMapping("/")
-    public String getHomepage() {
-        return "Hello, this is home page";
+    @GetMapping ("/")
+    public String getHomepage(Model model) {
+        model.addAttribute("message","Hello, this is home page");
+        return "Index";
     }
+    @ResponseBody
     @GetMapping("/hello")
     public String getHelloWorld() {
-        return "Hello World";
+        return "Hello World!";
     }
+
+    @ResponseBody
     @GetMapping("/capitalize/{string}")
     public String getCapitalizedString(@PathVariable String string) {
         return string.toUpperCase();
     }
+
+
 }
