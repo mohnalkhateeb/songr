@@ -8,8 +8,10 @@ public class Album {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    public long id;
+    long id;
+
+    @OneToMany(mappedBy = "album")
+    List<Song> songs;
 
     String title;
     String artist;
