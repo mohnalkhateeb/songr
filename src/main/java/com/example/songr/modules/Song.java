@@ -1,4 +1,4 @@
-package modules;
+package com.example.songr.modules;
 
 import javax.persistence.*;
 
