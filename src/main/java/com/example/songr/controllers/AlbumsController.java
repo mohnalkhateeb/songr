@@ -7,18 +7,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import repository.AlbumRepository;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 @Controller
 public class AlbumsController {
 
     @Autowired
-    AlbumRepository albumRepository;
+    private AlbumRepository albumRepository;
 //    @GetMapping("/albums")
 //    public String getAlbums(Model model ) {
 ////        public Album(String title, String artist, short songCount, long length, String imageUrl)
