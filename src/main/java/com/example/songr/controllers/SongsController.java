@@ -1,15 +1,15 @@
 package com.example.songr.controllers;
 
-import modules.Album;
-import modules.Song;
+import com.example.songr.modules.Album;
+import com.example.songr.modules.Song;
+import com.example.songr.repository.AlbumRepository;
+import com.example.songr.repository.SongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import repository.AlbumRepository;
-import repository.SongRepository;
 
 public class SongsController {
 
