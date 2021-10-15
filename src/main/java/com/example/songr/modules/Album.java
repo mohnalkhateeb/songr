@@ -1,6 +1,8 @@
 package com.example.songr.modules;
 
 import javax.persistence.*;
+import java.util.List;
+
 @Entity
 public class Album {
 
@@ -8,6 +10,9 @@ public class Album {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public long id;
+
+    @OneToMany(mappedBy = "album")
+    List<Song> songs;
 
     String title;
     String artist;
@@ -25,6 +30,14 @@ public class Album {
 
     public Album() {
 
+    }
+
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
     }
 
     public String getTitle() {

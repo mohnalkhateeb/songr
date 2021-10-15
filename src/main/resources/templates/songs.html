@@ -1,13 +1,13 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Albums!</title>
+    <title>Songs!</title>
 </head>
 <body>
 <h1>Add Song Form</h1>
-<form th:action="@{'/albums/'+${album.id}}" th:object="${addSong}" method="post">
+<form th:action="'/albums/'+${album.id}" th:object="${songSubmit}" method="post">
     <label for="title">Song Title:</label><input name="title" id="title" type="text"/>
-    <label for="length">Length:</label><input name="length" id="length" type="text"/>
-    <label for="trackNumber">Track Number:</label><input name="trackNumber" id="trackNumber" type="text"/>
+    <label for="length">Length:</label><input name="length" id="length" type="number"/>
+    <label for="trackNumber">Track Number:</label><input name="trackNumber" id="trackNumber" type="number"/>
 
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
