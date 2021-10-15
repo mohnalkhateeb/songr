@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Albums!</title>
 </head>
 <body>
-<section style="display: inline-block" th:each="album : ${albums}">
 
-    <div th:text="${album.title}"></div>
-    <div th:text="${album.artist}"></div>
-    <div th:text="${album.songCount}"></div>
-    <div th:text="${album.length}"></div>
-    <img th:src="${album.imageUrl}">
-</section>
 
 <form action="/albums" method="post">
-    <input type="text" name="title" placeholder="Album Title"/>
-    <input type="text" name="artist" placeholder="Album Artist"/>
-    <input type="number" name="songCount" placeholder="Number of Songs"/>
-    <input type="number" name="length" placeholder="Length of Album in Seconds"/>
-    <input type="text" name="imageUrl" placeholder="Album Art"/>
-    <input type = "submit"> Make that Album </input>
+    <input type="text" name="title" placeholder="Album Title"/></br>
+    <input type="text" name="artist" placeholder="Album Artist"/></br>
+    <input type="number" name="songCount" placeholder="Number of Songs"/></br>
+    <input type="number" name="length" placeholder="Length of Album in Seconds"/></br>
+    <input type="text" name="imageUrl" placeholder="Album Art"/></br>
+    <input type = "submit" value="Add Album">  </input>
 </form>
+    <section style="display: inline-block" th:each="album : ${albums}">
+
+        <div th:text="${album.title}"></div>
+        <div th:text="${album.artist}"></div>
+        <div th:text="${album.songCount}"></div>
+        <div th:text="${album.length}"></div>
+        <img th:src="${album.imageUrl}">
+    </section>
+
 </body>
 </html>

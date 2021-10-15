@@ -1,12 +1,16 @@
 package com.example.songr.modules;
 
 import javax.persistence.*;
+import java.util.Optional;
 
 @Entity
 public class Song {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Long id;
+
+
 
     public Long getId() {
         return id;
@@ -15,16 +19,18 @@ public class Song {
     public void setId(Long id) {
         this.id = id;
     }
-    @ManyToOne
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "album_id")
     Album album;
 
     String title;
     long length;
-    short trackNumber;
+    int trackNumber;
 
     public Song(){}
 
-    public Song(String title, long length, short trackNumber, Album album){
+    public Song(String title, long length, int trackNumber, Album album){
         this.title = title;
         this.length = length;
         this.trackNumber = trackNumber;
@@ -55,11 +61,11 @@ public class Song {
         this.length = length;
     }
 
-    public short getTrackNumber() {
+    public int getTrackNumber() {
         return trackNumber;
     }
 
-    public void setTrackNumber(short trackNumber) {
+    public void setTrackNumber(int trackNumber) {
         this.trackNumber = trackNumber;
     }
 }
