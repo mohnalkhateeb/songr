@@ -7,6 +7,7 @@ import java.util.Optional;
 public class Song {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Long id;
 
 
@@ -19,7 +20,8 @@ public class Song {
         this.id = id;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "album_id")
     Album album;
 
     String title;

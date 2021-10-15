@@ -10,7 +10,6 @@ import java.util.List;
 
 @Repository
 public interface SongRepository extends JpaRepository<Song, Long> {
-    @Override
-    List<Song> findAllById(Iterable<Long> longs);
+//    List<Song> findAllById(Iterable<Long> longs);
 
 }

@@ -8,6 +8,5 @@ import java.util.List;
 
 @Repository
 public interface AlbumRepository extends JpaRepository<Album, Long> {
-    @Override
-    List<Album> findAllById(Iterable<Long> longs);
+//    List<Album> findAllById(Iterable<Long> longs);
 }

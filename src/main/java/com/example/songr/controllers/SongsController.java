@@ -10,20 +10,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Controller
+@Transactional
 public class SongsController {
     @Autowired
-    SongRepository songRepository;
+    private SongRepository songRepository;
     @Autowired
-    AlbumRepository AlbumRepository;
+    private AlbumRepository albumRepository;
 
 
     @GetMapping("/albums/{id}")
     public String getAlbumSong(@PathVariable long id, Model m){
-        Album theAlbum = AlbumRepository.findById(id).get();
+        Album theAlbum = albumRepository.findById(id).get();
         Iterable<Song> songs = theAlbum.getSongs();
         m.addAttribute("songs", songs);
         m.addAttribute("album", theAlbum);
@@ -33,9 +35,9 @@ public class SongsController {
 
     @PostMapping("/albums/{id}")
     public RedirectView songSubmit(@RequestParam String title, @RequestParam long length, @RequestParam int trackNumber, @PathVariable long id){
-        Album a = AlbumRepository.findById(id).get();
-        Song newSong = new Song(title, length, trackNumber, a);
-        songRepository.save(newSong);
+        Album a = albumRepository.findById(id).get();
+        Song song = new Song(title, length, trackNumber, a);
+        songRepository.save(song);
         return new RedirectView("/albums/{id}");
     }
 

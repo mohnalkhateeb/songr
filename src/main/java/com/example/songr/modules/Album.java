@@ -11,7 +11,7 @@ public class Album {
     @Column(name = "id", nullable = false)
     public long id;
 
-    @OneToMany(mappedBy = "album")
+    @OneToMany(mappedBy = "album", fetch = FetchType.EAGER)
     List<Song> songs;
 
     String title;
