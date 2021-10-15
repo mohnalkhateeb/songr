@@ -1,6 +1,6 @@
-package repository;
+package com.example.songr.repository;
 
-import modules.Album;
+import com.example.songr.modules.Album;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
