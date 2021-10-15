@@ -1,7 +1,6 @@
 package com.example.songr.modules;
 
 import javax.persistence.*;
-
 @Entity
 public class Album {
 
